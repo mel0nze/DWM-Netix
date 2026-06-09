@@ -1,9 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-
-	static const unsigned int borderpx = 1; /* border pixel of windows */
-
+	
 	static const char normbgcolor[]           = "#000000";
 	static const char normbordercolor[]       = "#003B00";
 	static const char normfgcolor[]           = "#00FF41";
@@ -12,17 +10,17 @@
 	static const char selfgcolor[]            = "#33FF66";
 
 
-/*	static const unsigned int borderpx  = 1;           border pixel of windows */
+	static const unsigned int borderpx  = 1;        /* border pixel of windows */
 	static const unsigned int snap      = 32;       /* snap pixel */
 	static const int showbar            = 1;        /* 0 means no bar */
 	static const int topbar             = 1;        /* 0 means bottom bar */
 	static const char *fonts[]          = { "JetBrainsMono Nerd Font:size=10" };
 	static const char dmenufont[]       = "monospace:size=10";
-	static const char col_gray1[]       = "#222222";
+	static const char col_gray1[]       = "#2e3440";
 	static const char col_gray2[]       = "#444444";
 	static const char col_gray3[]       = "#bbbbbb";
 	static const char col_gray4[]       = "#eeeeee";
-	static const char col_smecher[]     = "#690077";
+	static const char col_smecher[]     = "#434c5e";
 	static const char *colors[][3]      = {
 		/*               fg         bg         border   */
 		[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -39,7 +37,7 @@
 		 */
 		/* class      instance    title       tags mask     isfloating   monitor */
 		{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-		{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+		{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },	
 	
 	};
 
@@ -119,11 +117,16 @@
 		{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 		{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 		{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
-		{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
 		{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 		{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
 		{ ClkTagBar,            0,              Button1,        view,           {0} },
 		{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
 		{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 		{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
+		{ ClkStatusText, 0, Button1, sigstatusbar, {.i = 1} },
+		{ ClkStatusText, 0, Button2, sigstatusbar, {.i = 2} },
+		{ ClkStatusText, 0, Button3, sigstatusbar, {.i = 3} },
+		{ ClkStatusText, 0, Button4, sigstatusbar, {.i = 4} },
+		{ ClkStatusText, 0, Button5, sigstatusbar, {.i = 5} },
 	};
+
